@@ -2,8 +2,6 @@
 >### 确保所有节点系统时间一致
 ### 1、下载所需文件
 
-> 确保所有节点系统时间一致
-
 下载Ansible部署文件：
 
 ```
@@ -13,7 +11,7 @@ cd ansible-install-k8s
 
 下载软件包并解压：
 
-云盘地址：https://pan.baidu.com/s/1xhBfUm3vDKgDrUpFbcCgWQ
+云盘地址：https://pan.baidu.com/s/1lTXolmlcCJbei9HY2BJRPQ
 ```
 tar zxf binary_pkg.tar.gz
 ```
