@@ -13,14 +13,7 @@
     - docker 
   tags: docker
 
-- name: 2.部署Flannel
-  gather_facts: false
-  hosts: newnode
-  roles:
-    - flannel
-  tags: flannel
-
-- name: 3.部署K8S Node
+- name: 2.部署K8S Node
   gather_facts: false
   hosts: newnode
   roles:
