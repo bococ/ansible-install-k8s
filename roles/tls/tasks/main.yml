@@ -1,5 +1,5 @@
 ---
-- name: 查看状态
+- name: 获取Ansible工作目录
   shell: pwd |sed 's#roles/tls##' 
   register: root_dir 
 
