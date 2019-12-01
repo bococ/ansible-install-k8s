@@ -4,7 +4,7 @@ k8s_work_dir: '/opt/kubernetes'
 etcd_work_dir: '/opt/etcd'
 tmp_dir: '/tmp/k8s'
 
-# 容器网络
+# 集群网络
 service_cidr: '10.0.0.0/24'
 cluster_dns: '10.0.0.2'   # 与coredns.yaml里IP一致
 pod_cidr: '10.244.0.0/16' # 与kube-flannel.yaml里网段一致
