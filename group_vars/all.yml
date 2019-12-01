@@ -6,8 +6,8 @@ tmp_dir: '/tmp/k8s'
 
 # 容器网络
 service_cidr: '10.0.0.0/24'
-cluster_dns: '10.0.0.2'
-pod_cidr: '10.244.0.0/16' # 与CNI插件网络一致
+cluster_dns: '10.0.0.2'   # 与coredns.yaml里IP一致
+pod_cidr: '10.244.0.0/16' # 与kube-flannel.yaml里网段一致
 service_nodeport_range: '30000-32767'
 cluster_domain: 'cluster.local'
 
