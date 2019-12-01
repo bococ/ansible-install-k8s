@@ -37,6 +37,6 @@
   template: src=etcd.sh.j2 dest={{ tmp_dir }}/etcd.sh mode=u+x
 
 - name: 获取etcd集群状态
-  shell: /bin/bash {{ tmp_dir }}/etcd.sh cluster-health
+  shell: /bin/bash {{ tmp_dir }}/etcd.sh
   register: status 
 - debug: var=status.stdout_lines
