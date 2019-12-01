@@ -70,6 +70,7 @@
     - apiserver-to-kubelet-rbac.yaml
 
 - name: 授权APIServer访问Kubelet与授权kubelet bootstrap
+  ignore_errors: yes
   shell: kubectl apply -f {{ tmp_dir }}/apiserver-to-kubelet-rbac.yaml && \
          kubectl apply -f {{ tmp_dir }}/kubelet-bootstrap-rbac.yaml
 
