@@ -33,7 +33,7 @@ vrrp_instance VI_1 {
         auth_pass 1111 
     }  
     virtual_ipaddress { 
-        {{ vip }}
+        {{ vip }}/24
     } 
     track_script {
         check_nginx
