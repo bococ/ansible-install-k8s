@@ -5,27 +5,28 @@
 下载Ansible部署文件：
 
 ```
-git clone https://github.com/lizhenliang/ansible-install-k8s
-cd ansible-install-k8s
+# git clone https://github.com/lizhenliang/ansible-install-k8s
+# cd ansible-install-k8s
 ```
 
-下载软件包并解压：
+下载软件包并解压/root目录：
 
 云盘地址：https://pan.baidu.com/s/1lTXolmlcCJbei9HY2BJRPQ
 ```
-tar zxf binary_pkg.tar.gz
+# tar zxf binary_pkg.tar.gz
 ```
 ### 2、修改Ansible文件
 
 修改hosts文件，根据规划修改对应IP和名称。
 
 ```
-vi hosts
+# vi hosts
+...
 ```
 修改group_vars/all.yml文件，修改软件包目录和证书可信任IP。
 
 ```
-vim group_vars/all.yml
+# vim group_vars/all.yml
 software_dir: '/root/binary_pkg'
 ...
 cert_hosts:
