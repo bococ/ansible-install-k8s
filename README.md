@@ -42,11 +42,11 @@ cert_hosts:
 ### 部署命令
 单Master版：
 ```
-ansible-playbook -i hosts single-master-deploy.yml -uroot -k
+# ansible-playbook -i hosts single-master-deploy.yml -uroot -k
 ```
 多Master版：
 ```
-ansible-playbook -i hosts multi-master-deploy.yml -uroot -k
+# ansible-playbook -i hosts multi-master-deploy.yml -uroot -k
 ```
 
 ## 4、部署控制
@@ -54,5 +54,5 @@ ansible-playbook -i hosts multi-master-deploy.yml -uroot -k
 
 例如：只运行部署插件
 ```
-ansible-playbook -i hosts single-master-deploy.yml -uroot -k --tags addons
+# ansible-playbook -i hosts single-master-deploy.yml -uroot -k --tags addons
 ```
