@@ -19,9 +19,9 @@ KUBE_APISERVER_OPTS="--logtostderr=false \
 --tls-private-key-file={{ k8s_work_dir }}/ssl/server-key.pem \
 --client-ca-file={{ k8s_work_dir }}/ssl/ca.pem \
 --service-account-key-file={{ k8s_work_dir }}/ssl/ca-key.pem \
---etcd-cafile={{ k8s_work_dir }}/ssl/ca.pem \
---etcd-certfile={{ k8s_work_dir }}/ssl/server.pem \
---etcd-keyfile={{ k8s_work_dir }}/ssl/server-key.pem \
+--etcd-cafile={{ k8s_work_dir }}/ssl/etcd/ca.pem \
+--etcd-certfile={{ k8s_work_dir }}/ssl/etcd/server.pem \
+--etcd-keyfile={{ k8s_work_dir }}/ssl/etcd/server-key.pem \
 --audit-log-maxage=30 \
 --audit-log-maxbackup=3 \
 --audit-log-maxsize=100 \
