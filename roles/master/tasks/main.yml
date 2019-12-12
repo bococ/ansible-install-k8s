@@ -7,6 +7,9 @@
     - ssl
     - logs
 
+- name: 创建etcd证书目录
+  file: dest={{ k8s_work_dir }}/ssl/etcd state=directory
+
 - name: 创建临时目录
   file: dest={{ tmp_dir }} state=directory
 
