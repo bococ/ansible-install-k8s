@@ -6,8 +6,8 @@ clientConnection:
   kubeconfig: {{ k8s_work_dir }}/cfg/kube-proxy.kubeconfig
 hostnameOverride: {{ node_name }} 
 clusterCIDR: {{ pod_cidr }}
-mode: ipvs
-ipvs:
-  scheduler: "rr"
+#mode: ipvs
+#ipvs:
+#  scheduler: "rr"
 iptables:
   masqueradeAll: false
