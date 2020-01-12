@@ -1,5 +1,5 @@
 {
-  "registry-mirrors": ["http://bc437cce.m.daocloud.io"],
+  "registry-mirrors": ["https://b9pmyelo.mirror.aliyuncs.com"],
   "insecure-registries": ["192.168.31.70"],
   "log-driver": "json-file",
   "log-opts": {
