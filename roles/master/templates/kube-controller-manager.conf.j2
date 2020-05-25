@@ -3,7 +3,7 @@ KUBE_CONTROLLER_MANAGER_OPTS="--logtostderr=false \
 --log-dir={{ k8s_work_dir }}/logs \
 --leader-elect=true \
 --master=127.0.0.1:8080 \
---address=127.0.0.1 \
+--bind-address=127.0.0.1 \
 --allocate-node-cidrs=true \
 --cluster-cidr={{ pod_cidr }} \
 --service-cluster-ip-range={{ service_cidr }} \
