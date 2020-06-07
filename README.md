@@ -58,3 +58,18 @@ cert_hosts:
 ```
 
 ![avatar](https://github.com/lizhenliang/Shell-Python-Document/blob/master/%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F.png)
+
+## 5、节点扩容
+1）修改hosts，添加新节点ip
+```
+# vi hosts
+```
+2）执行部署
+```
+ansible-playbook -i hosts add-node.yml -uroot -k
+```
+3）在Master节点允许颁发证书并加入集群
+```
+kubectl get csr
+kubectl certificate approve node-csr-xxx
+```
