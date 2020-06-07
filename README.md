@@ -57,8 +57,6 @@ cert_hosts:
 # ansible-playbook -i hosts single-master-deploy.yml -uroot -k --tags addons
 ```
 
-![avatar](https://github.com/lizhenliang/Shell-Python-Document/blob/master/%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F.png)
-
 ## 5、节点扩容
 1）修改hosts，添加新节点ip
 ```
@@ -73,3 +71,4 @@ ansible-playbook -i hosts add-node.yml -uroot -k
 kubectl get csr
 kubectl certificate approve node-csr-xxx
 ```
+![avatar](https://github.com/lizhenliang/Shell-Python-Document/blob/master/%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F.png)
