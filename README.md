@@ -71,4 +71,7 @@ ansible-playbook -i hosts add-node.yml -uroot -k
 kubectl get csr
 kubectl certificate approve node-csr-xxx
 ```
+
+视频教程：https://ke.qq.com/course/266656
+
 ![avatar](https://github.com/lizhenliang/Shell-Python-Document/blob/master/%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F.png)
