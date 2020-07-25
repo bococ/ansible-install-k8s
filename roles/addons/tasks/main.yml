@@ -14,13 +14,6 @@
          cd {{ tmp_dir }}
          for yaml in $(ls *.yaml);do kubectl apply -f $yaml;done
 
-- name: 替换Dashboard证书
-  shell: |
-         kubectl delete secret kubernetes-dashboard-certs -n kubernetes-dashboard |true
-         kubectl create secret generic kubernetes-dashboard-certs \
-         --from-file={{ k8s_work_dir }}/ssl/server-key.pem --from-file={{ k8s_work_dir }}/ssl/server.pem -n kubernetes-dashboard
-         kubectl apply -f {{ tmp_dir }}/kubernetes-dashboard.yaml
-
 - name: 查看Pod状态
   shell: kubectl get all --all-namespaces
   register: getall
