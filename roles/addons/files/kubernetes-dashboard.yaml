@@ -158,7 +158,6 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: kubernetes-dashboard
-  namespace: kubernetes-dashboard
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -190,7 +189,7 @@ spec:
     spec:
       containers:
         - name: kubernetes-dashboard
-          image: kubernetesui/dashboard:v2.0.0-beta4
+          image: kubernetesui/dashboard:v2.0.3
           imagePullPolicy: Always
           ports:
             - containerPort: 8443
@@ -198,8 +197,6 @@ spec:
           args:
             - --auto-generate-certificates
             - --namespace=kubernetes-dashboard
-            - --tls-key-file=server-key.pem
-            - --tls-cert-file=server.pem
             # Uncomment the following line to manually specify Kubernetes API server Host
             # If not specified, Dashboard will attempt to auto discover the API server and connect
             # to it. Uncomment only if the default does not work.
@@ -217,6 +214,11 @@ spec:
               port: 8443
             initialDelaySeconds: 30
             timeoutSeconds: 30
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsUser: 1001
+            runAsGroup: 2001
       volumes:
         - name: kubernetes-dashboard-certs
           secret:
@@ -224,6 +226,8 @@ spec:
         - name: tmp-volume
           emptyDir: {}
       serviceAccountName: kubernetes-dashboard
+      nodeSelector:
+        "kubernetes.io/os": linux
       # Comment the following tolerations if Dashboard must not be deployed on master
       tolerations:
         - key: node-role.kubernetes.io/master
@@ -264,10 +268,12 @@ spec:
     metadata:
       labels:
         k8s-app: dashboard-metrics-scraper
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: 'runtime/default'
     spec:
       containers:
         - name: dashboard-metrics-scraper
-          image: kubernetesui/metrics-scraper:v1.0.1
+          image: kubernetesui/metrics-scraper:v1.0.4
           ports:
             - containerPort: 8000
               protocol: TCP
@@ -281,7 +287,14 @@ spec:
           volumeMounts:
           - mountPath: /tmp
             name: tmp-volume
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsUser: 1001
+            runAsGroup: 2001
       serviceAccountName: kubernetes-dashboard
+      nodeSelector:
+        "kubernetes.io/os": linux
       # Comment the following tolerations if Dashboard must not be deployed on master
       tolerations:
         - key: node-role.kubernetes.io/master
