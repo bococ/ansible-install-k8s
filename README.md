@@ -11,8 +11,8 @@
 
 下载软件包并解压/root目录：
 
-云盘链接：https://pan.baidu.com/s/1nlnnHh4ufX5mDyHJ9goOSw 
-提取码：144p
+链接：https://pan.baidu.com/s/1INk9jzu_Yfho3z31pwATAw 
+提取码：1cfl
 ```
 # tar zxf binary_pkg.tar.gz
 ```
