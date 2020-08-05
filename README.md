@@ -11,8 +11,8 @@
 
 下载软件包并解压/root目录：
 
-链接：https://pan.baidu.com/s/1INk9jzu_Yfho3z31pwATAw 
-提取码：1cfl
+链接：https://pan.baidu.com/s/1EWnJoJjAD3GNqghOwgodWQ 
+提取码：tlvz
 ```
 # tar zxf binary_pkg.tar.gz
 ```
